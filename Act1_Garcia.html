@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="maindiv">
+        <p class="maintitle">ORDER FORM</p>
         <form action="Act1_Garcia.html" method="POST" >
             <div class="cstform">
                 <p class="divtitle">Customer</p>
@@ -19,39 +20,39 @@
                 </p>
                 <p align="right">
                     <label for=""> Order Number:</label>
-                    <input type="text" class="inputstyle1" placeholder="">
+                    <input type="value" class="inputstyle1" placeholder="999999">
                 </p>
 
                 <div>
                     <div class="inputset">
                         <label for="" class="labelstyle1">Customer Name:</label>
-                        <input type="text" class="inputstyle1 inputlength1">
+                        <input type="text" class="inputstyle1 inputlength1" placeholder="Surname, First Name, MI">
                     </div>
                     <div class="inputset">
                         <label for="" class="labelstyle1">Address:</label>
-                        <input type="text" class="inputstyle1 inputlength2">
+                        <input type="text" class="inputstyle1 inputlength2" placeholder="Street, Barangay, City/Province">
                     </div>
                     <div class="inputset">
-                        <label for="" class="labelstyle1">Contact Name:</label>
-                        <input type="text" class="inputstyle1 inputlength1">
+                        <label for="" class="labelstyle1" >Contact Name:</label>
+                        <input type="text" class="inputstyle1 inputlength1" placeholder="Name">
                     </div>
                     <div class="sets">
                         <div class="inputset">
                             <label for="" class="labelstyle2">Phone:</label>
-                            <input type="text" class="inputstyle1 inputlength3">
+                            <input type="text" class="inputstyle1 inputlength3"placeholder="XXX-XXXX">
                         </div>
                        <div class="inputset">
                             <label for="" class="labelstyle3">Mobile:</label>
-                            <input type="text" class="inputstyle1 inputlength3">
+                            <input type="text" class="inputstyle1 inputlength3" placeholder="09XXXXXXXXX">
                        </div>
                     </div>
                     <div class="inputset">
                         <label for="" class="labelstyle1">E-mail:</label>
-                        <input type="text" class="inputstyle1 inputlength1">
+                        <input type="text" class="inputstyle1 inputlength1" placeholder="emailsample@yahoo.com">
                     </div>
                 </div>
             </div>
-
+        
             <div class="orderform">
                 <p class="divtitle">Products to Order</p> <br>
                 <div class="tablediv">
@@ -198,9 +199,19 @@
                                 <td><p>XXX.XX Php</p></td>
                             </tr>
                         </tbody>
-                     </table>
+                    </table>
                 </div>
+                <p align="right" class="total">
+                    <label for="">Total:</label>
+                    <input type="value" class="inputstyle1" placeholder="XXX.XX Php" readonly >
+                </p>
             </div>
+
+            <div class="btndiv">
+                <button class="btnstyle1 btncolor1" ><p>Submit</p></button>
+                <button class="btnstyle1 btncolor2">Reset</button>
+            </div>
+
         </form>
     </div>
 </body>

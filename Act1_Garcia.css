@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     
+    
 }
 body {
     background-color: #e7e7e7;
@@ -30,6 +31,14 @@ body {
     background:#b4afaf;
     border-radius: 4px;
     transition: all .35s ease-in-out;
+}
+
+.maintitle {
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin: 20px 20px 0px 20px;
+    color: #2f2d44 ;
 }
 
 .maindiv {
@@ -61,18 +70,41 @@ body {
     border-radius: 10px;
 }
 .orderform {
-    margin: 20px;
-    padding: 10px;
-    border: #535353 solid 1px;
+    margin: 10px 20px 0px 20px;
+    padding: 15px;
+    /* border: #535353 solid 1px; */
     border-radius: 10px;
+}
+.btndiv {
+    margin: 0px 20px 20px 20px;
+}
+
+.btnstyle1 {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+.btncolor1 {
+    background-color: #3c8f3c;
+    color: white;
+}
+
+.btncolor2 {
+    background-color: #be322d;
+    color: white;
+}
+
+
+.total {
+    margin-top: 20px;
 }
 
 /* CLASS STYLES */
 .sets {
     display: flex;
     width: 100%;
-    padding-left: 4%;
-    padding-right: 10px;
 }
 .inputset {
     display: flex;
@@ -80,23 +112,26 @@ body {
 }
 /* LABEL */
 .labelstyle1 {
+    display: block;
     width: 18%;
-    max-width: 150px;
+    max-width: 160px;
     min-width: 70px;
     text-align: right;
+    padding: 5px 0;
     
 }
 .labelstyle2 {
-
-    width: 40%;
+    width: 70%;
+    max-width: 160px;
     min-width: 70px;
     text-align: right;
+    padding: 5px 0;
 }
 .labelstyle3 {
     width:fit-content;
-    padding-left: 10px;
     text-align: left;
-    
+    padding: 5px 0;
+    margin-left: 10%;
 }
 /* INPUT */
 .inputstyle1 {
@@ -113,10 +148,14 @@ body {
     width: 80%;
 }
 .inputlength3 {
-    width: 90%;
+    width: 70%;
 }
 .inputlength4 {
-    width: 50px;
+    width: 100px;
+}
+
+.inputstyle1:focus {
+    border: #d0d1e0 solid 2px;
 }
 
 .dropdownstyle {
