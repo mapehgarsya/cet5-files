@@ -1,0 +1,108 @@
+body {
+    background-color: #ffffcc;
+    color: #330000;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+#container {
+    margin-top: 20px;
+    margin: 0 auto;
+    height: fit-content;
+    width: 750px;
+    border-style: solid;
+}
+#logo {
+    background-color: #CCAA66;
+    text-align: center;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    height: 80px;
+}
+#leftcolumn {
+    background-color: #E8D882;
+    position: relative;
+    padding-left: 20px;
+    left: 0;
+    width: 130px;
+    height: 320px;
+    float: left;
+    white-space: pre-line;
+}
+#rightcolumn {
+    background-color: #F1E8B0;
+    position: relative;
+    width: 580px;
+    height: 300px;
+    padding: 10px;
+    float: right;
+}
+
+.navBar {
+    float: center;
+    display: block;
+    color:black;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navBar:hover {
+    background-color:#F1E8B0;
+    color: #922e27;
+}
+#contact {
+    margin-top: 50px;
+}
+#coffeePic {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    
+}
+#footer {
+    background-color: #CCAA66;
+    border-top-style: solid;
+    height: 62px;
+    text-align: center;
+    font-style: italic;
+    width: 100%;
+    margin-top: 320px;
+    padding-top: 10px;
+}
+
+
+/* Menu */
+#d-flex {
+    display: flex;
+    flex-grow: 1;
+}
+#d-flex div {
+    width: 100%;
+    padding-left: 20px;
+}
+
+/* Music */
+#audioDiv {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+}
+#audioTitle p {
+    height: 60px;
+    width: 230px;
+    padding-left: 10px;
+}
+#first {
+    padding-top: 10px;
+}
+#songs audio {
+    width: 300px;
+    height: 50px;
+    padding: 13px 0;
+    float: right;
+    padding-right: 10px;
+}
+
+/* Jobs */
+#jobsDiv {
+    margin-left: 20px;
+}

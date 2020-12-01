@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2: Jake's Coffee Shop</title>
+    <link rel="stylesheet" href="./Act2_Garcia.css">
+</head>
+<body>
+    <div id="container">
+        <div id="logo">
+            <h1>Jake's Coffee Shop</h1>
+        </div>
+        <div id="leftcolumn">
+            <a href="#home" class="navBar" onclick="homeFunc()">Home</a>
+            <a href="#menu" class="navBar" onclick="menuFunc()">Menu</a>
+            <a href="#music" class="navBar" onclick="musicFunc()">Music</a>
+            <a href="#jobs" class="navBar" onclick="jobsFunc()">Jobs</a>
+        </div>
+        <div id="rightcolumn">
+            <p>Come in and experience...</p>
+            <img src="./coffeePicture.jpg" id="coffeePic" alt="coffee cup" width="200">
+            <ul>
+                <li>Specialty Coffee and tea</li>
+                <li>Freshly made sandwiches</li>
+                <li>Bagels, Muffins and Organic Snacks</li>
+                <li>Music and Poetry Readings</li>
+                <li>Open Mic Nights</li>
+                <li>...</li>
+            </ul>
+            <p id="contact">23 Pine Road <br/> Nottingham, NGI 5YU <br/> 0115 9324567</p>
+
+        </div>
+        <div id="footer">
+            Copyright &copy; 2011 Jake's Coffee House<br>
+            <a href="mailto:jake@jcoffee.com">jake@jcoffee.com</a>
+        </div>
+    </div>
+    
+    <script>
+        function homeFunc() {
+            var homeCont =
+            "<p>Come in and experience...</p>" +
+            "<img src='./coffeePicture.jpg' id='coffeePic' alt='coffee cup' width='200'>" +
+            "<ul>" +
+                "<li>Specialty Coffee and tea</li>" +
+                "<li>Freshly made sandwiches</li>" +
+                "<li>Bagels, Muffins and Organic Snacks</li>" +
+                "<li>Music and Poetry Readings</li>" +
+                "<li>Open Mic Nights</li>" +
+                "<li>...</li>" +
+            "</ul>" +
+            "<p id='contact'>23 Pine Road <br/> Nottingham, NGI 5YU <br/> 0115 9324567</p>"
+
+            document.getElementById("rightcolumn").innerHTML = homeCont;
+        }
+        
+        function menuFunc() {
+          var menuCont = 
+            "<div id='d-flex'>" +
+                    "<div>" +
+                        "<h4>Coffee</h4>" +
+                            "<ul>" +
+                                "<li>Latte</li>" +
+                                "<li>Americano</li>" +
+                                "<li>Espresso</li>" +
+                                "<li>Macchiato</li>" +
+                            "</ul>" +
+                        "<h4>Ice Blended</h4>" +
+                            "<ul>" +
+                                "<li>Caramel</li>" +
+                                "<li>Vanilla</li>" +
+                                "<li>Hazelnut Mocha</li>" +
+                                "<li>Mint Chocolate Chip</li>" +
+                            "</ul>" +
+                    "</div>" +
+                    "<div>" +
+                        "<h4>Tea</h4>" +
+                            "<ul>" +
+                                "<li>Earl Grey</li>" +
+                                "<li>Green Tea</li>" +
+                                "<li>Jasmine Tea</li>" +
+                                "<li>Milk Tea</li>" +
+                            "</ul>" +
+                        "<h4>Frappe</h4>" +
+                            "<ul>" +
+                                "<li>Mocha</li>" +
+                                "<li>Dark Chocolate</li>" +
+                                "<li>Banoffee Cream</li>" +
+                                "<li>Caramel Freeze</li>" +
+                            "</ul>" +
+                    "</div>" +
+                "</div>"
+          document.getElementById("rightcolumn").innerHTML = menuCont;
+
+        }
+
+        function musicFunc() {
+            var musicCont = 
+                "<div id='audioDiv'>" +
+                    "<div id='audioTitle'>" +
+                        "<p id='first'>Coffee by Beabadoobee</p>" +
+                        "<p>Electric Love by BØRNS</p>" +
+                        "<p>Maniac by Conan Gray</p>" +
+                        "<p>Kamikaze by MØ </p>" +
+                    "</div>" +
+                    "<div id='songs'>" +
+                        "<audio src='' controls></audio>" +
+                        "<audio src='' controls></audio>" +
+                        "<audio src='' controls></audio>" +
+                        "<audio src='' controls></audio>" +
+                    "</div>" +
+                "</div>"
+
+            document.getElementById("rightcolumn").innerHTML = musicCont;
+        }
+
+        function jobsFunc() {
+            jobsCont = 
+                "<div id='jobsDiv'>" +
+                    "<h3>Wanted Positions</h3>" +
+                    "<ul>" +
+                        "<li><h4>Barista</h4></li>" +
+                        "<li><h4>Cashier</h4></li>" +
+                        "<li><h4>Table Attendant</h4></li>" +
+                    "</ul>" +
+                "</div>"
+
+            document.getElementById("rightcolumn").innerHTML = jobsCont;
+        }
+
+    </script>
+    
+</body>
+</html>
