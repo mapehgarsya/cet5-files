@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3: PUP MAP</title>
+    <link rel="stylesheet" href="./Act3_Garcia.css">
+</head>
+<body>
+    <div class="mainDiv">
+        <div class="designDiv">
+            <h1 class="mapTitle">PUP MAP</h1>
+            <img id="pupMapID" src="./Act3-assets/PUP-map1.png" alt="PUP, MANILA MAP" height="500" width="668" usemap="#mapArea">
+            <map name="mapArea">
+                <area
+                    shape="poly" 
+                    coords="233, 262,243, 263, 257, 257, 266, 266, 277, 266, 271, 280, 253, 285, 238, 276" 
+                    alt="Amphitheatre"
+                    onmouseover="showLocation('./Act3-assets/ampitheatre.jpg', 1)"
+                >
+                <area
+                    shape="poly" 
+                    coords="78, 191, 93, 168, 171, 214, 157, 237" 
+                    alt="Laboratory High"
+                    onmouseover="showLocation('./Act3-assets/lab-high.jpg', 6)"
+                >
+                <area
+                    shape="rect" 
+                    coords="444, 52, 548, 108" 
+                    alt="PUP Gymnasium"
+                    onmouseover="showLocation('./Act3-assets/gym.jpg', 10)"
+                >
+                <area
+                    shape="circle" 
+                    coords="330, 397, 50" 
+                    alt="Interfaith Chapel" 
+                    onmouseover="showLocation('./Act3-assets/chapel.PNG', 11)"
+                >
+                <area
+                    shape="poly" 
+                    coords="99, 57, 159, 91, 152, 100, 121, 83, 114, 94, 162, 121, 155, 130, 108, 102, 102, 113, 167, 154, 162, 161, 146, 152, 139, 161, 181, 185, 175, 195, 75, 138, 82, 131, 90, 120, 68, 107, 73, 98, 95, 110, 104, 98, 78, 85, 84, 76, 108, 91, 115, 80, 93, 67" 
+                    alt="Laboratory High School"
+                    onmouseover="showLocation('./Act3-assets/lab-high1.JPG', 12)"
+                >
+                <area
+                    shape="circle" 
+                    coords="245, 343, 28" 
+                    alt="Dome"
+                    onmouseover="showLocation('./Act3-assets/dome.jpg', 14)"
+                >
+                <area
+                    shape="poly" 
+                    coords="226, 369, 240, 372, 248, 370, 262, 365, 262, 446, 254, 454, 241, 454, 224, 446" 
+                    alt="East Wing"
+                    onmouseover="showLocation('./Act3-assets/eastwing.jpg', 15)"
+                >
+                <area
+                    shape="poly" 
+                    coords="256, 315, 269, 324, 272, 332, 277, 347, 344, 311, 339, 303, 342, 291, 334, 279, 324, 277" 
+                    alt="North Wing"
+                    onmouseover="showLocation('./Act3-assets/north-wing.jpg', 16)"
+                >
+                <area
+                    shape="poly" 
+                    coords="134, 344, 171, 326, 179, 335, 218, 404, 220, 421, 187, 440, 174, 429, 137, 359" 
+                    alt="South Wing"
+                    onmouseover="showLocation('./Act3-assets/south-wing.jpg', 17)"
+                >
+                <area
+                    shape="poly" 
+                    coords="146, 294, 153, 283, 169, 272, 234, 312, 225, 323, 219, 332, 215, 346, 149, 305" 
+                    alt="West Wing"
+                    onmouseover="showLocation('./Act3-assets/west-wing.jpg', 18)"
+                >
+                <area
+                    shape="circle" 
+                    coords="530, 320, 54" 
+                    alt="PUP Oval"
+                    onmouseover="showLocation('./Act3-assets/oval.jpg', 24)"
+                >
+                <area
+                    shape="circle" 
+                    coords="483, 388, 54" 
+                    alt="PUP Oval"
+                    onmouseover="showLocation('./Act3-assets/oval.jpg', 24)"
+                >
+                <area
+                    shape="poly" 
+                    coords="446, 343, 480, 292, 571, 359, 535, 409" 
+                    alt="PUP Oval"
+                    onmouseover="showLocation('./Act3-assets/oval.jpg', 24)"
+                >
+            </map>
+            <div id="coorID"></div>
+        </div>
+        <div class="designDiv previewDiv">
+            
+            <h1 id="titleHolder" class="dispNone"></h1>
+            <img id="imgHolder" class="dispNone" src="">
+            <p id="descHolder" class="dispNone"></p>
+
+           <div id="prevID">
+                <h1 class="redH1">Locations Available for Preview</h1>
+                <h5>1. Amphitheatre</h5>
+                <h5>6. Laboratory High School</h5>
+                <h5>11. Interfaith Chapel</h5>
+                <h5>12. Laboratory High School</h5>
+                <h5>14. Main Building – Dome</h5>
+                <h5>15. Main Building - East Wing</h5>
+                <h5>16. Main Building - North Wing</h5>
+                <h5>17. Main Building - South Wing</h5>
+                <h5>18. Main Building - West Wing</h5>
+                <h5>24. PUP Oval</h5>
+           </div>
+        </div>
+    </div>
+
+    <script>
+        function showLocation (data, number) {
+            let previewCont = document.getElementById('prevID')
+            let imgHolder = document.getElementById('imgHolder')
+            let titleHolder = document.getElementById('titleHolder')
+            let descHolder = document.getElementById('descHolder')
+
+            previewCont.classList.add('dispNone')
+            imgHolder.classList.remove('dispNone')
+            imgHolder.classList.add('dispImg')
+            imgHolder.src = data
+
+            switch(number) {
+                case 1:
+                    titleHolder.classList.remove('dispNone')
+                    titleHolder.classList.add('dispTitle')
+                    titleHolder.innerHTML = "Amphitheatre"
+                    descHolder.classList.remove('dispNone')
+                    descHolder.classList.add('dispDesc')
+                    descHolder.innerHTML = "The Ampitheatre is located near the lagoon, thus is a very common spot for students to gather and eat their meals during breaks."
+                break;
+                case 6:
+                    titleHolder.classList.remove('dispNone')
+                    titleHolder.classList.add('dispTitle')
+                    titleHolder.innerHTML = "Laboratory High School"
+                    descHolder.classList.remove('dispNone')
+                    descHolder.classList.add('dispDesc')
+                    descHolder.innerHTML = "The PUP LHS curricular program focuses on Discipline, Academic Excellence, Nationalism and Commerce. It is one of the top performing high schools in the country producing top caliber students who later become prominent in their chosen field of specialization."
+                break;
+                case 10:
+                    titleHolder.classList.remove('dispNone')
+                    titleHolder.classList.add('dispTitle')
+                    titleHolder.innerHTML = "PUP Gymnasium"
+                    descHolder.classList.remove('dispNone')
+                    descHolder.classList.add('dispDesc')
+                    descHolder.innerHTML = "*Under Construction"
+                break;
+                case 11:
+                    titleHolder.classList.remove('dispNone')
+                    titleHolder.classList.add('dispTitle')
+                    titleHolder.innerHTML = "Interfaith Chapel"
+                    descHolder.classList.remove('dispNone')
+                    descHolder.classList.add('dispDesc')
+                    descHolder.innerHTML = "The ecumenical chapel (known as the Interfaith Chapel) is a nondenominational Christian church."
+                break;
+                case 12:
+                    titleHolder.classList.remove('dispNone')
+                    titleHolder.classList.add('dispTitle')
+                    titleHolder.innerHTML = "Laboratory High School"
+                    descHolder.classList.remove('dispNone')
+                    descHolder.classList.add('dispDesc')
+                    descHolder.innerHTML = "The PUP LHS curricular program focuses on Discipline, Academic Excellence, Nationalism and Commerce. It is one of the top performing high schools in the country producing top caliber students who later become prominent in their chosen field of specialization."
+                break;
+                case 14:
+                    titleHolder.classList.remove('dispNone')
+                    titleHolder.classList.add('dispTitle')
+                    titleHolder.innerHTML = "Main Building - Dome"
+                    descHolder.classList.remove('dispNone')
+                    descHolder.classList.add('dispDesc')
+                    descHolder.innerHTML = "The Dome is the one place that connects the North, East, South, and West wing of the main building, it contains a walkway that is ideal for persons with disabilities (PWD) to pass through to explore the main building."
+                break;
+                case 15:
+                    titleHolder.classList.remove('dispNone')
+                    titleHolder.classList.add('dispTitle')
+                    titleHolder.innerHTML = "Main Building - East Wing"
+                    descHolder.classList.remove('dispNone')
+                    descHolder.classList.add('dispDesc')
+                    descHolder.innerHTML = "East part of the Main Building. Classrooms are located mostly on this part. In the 4th Flr. East Wing, on the BSCS side, is located the Learning Resources Center used as study area of the students."
+                break;
+                case 16:
+                    titleHolder.classList.remove('dispNone')
+                    titleHolder.classList.add('dispTitle')
+                    titleHolder.innerHTML = "Main Building - North Wing"
+                    descHolder.classList.remove('dispNone')
+                    descHolder.classList.add('dispDesc')
+                    descHolder.innerHTML = "North part of the Main Building. Classrooms are located mostly on this part."
+                break;
+                case 17:
+                    titleHolder.classList.remove('dispNone')
+                    titleHolder.classList.add('dispTitle')
+                    titleHolder.innerHTML = "Main Building - South Wing"
+                    descHolder.classList.remove('dispNone')
+                    descHolder.classList.add('dispDesc')
+                    descHolder.innerHTML = "South part of the Main Building. Event halls like Claro M. Recto Hall and the university offices are located mostly on this part."
+                break;
+                case 18:
+                    titleHolder.classList.remove('dispNone')
+                    titleHolder.classList.add('dispTitle')
+                    titleHolder.innerHTML = "Main Building - West Wing"
+                    descHolder.classList.remove('dispNone')
+                    descHolder.classList.add('dispDesc')
+                    descHolder.innerHTML = "West part of the Main Building. Classrooms are located mostly on this part."
+                break;
+                case 24:
+                    titleHolder.classList.remove('dispNone')
+                    titleHolder.classList.add('dispTitle')
+                    titleHolder.innerHTML = "PUP Oval"
+                    descHolder.classList.remove('dispNone')
+                    descHolder.classList.add('dispDesc')
+                    descHolder.innerHTML = "This is where most students go for their physical education activities and some events like concerts are taken place here in the Oval."
+                break;
+                default:break;
+            }
+
+
+            window.addEventListener('mouseout', function () {
+                previewCont.classList.remove('dispNone')
+                titleHolder.classList.remove('DispTitle')
+                titleHolder.classList.add('dispNone')
+                imgHolder.classList.remove('dispImg')
+                imgHolder.classList.add('dispNone')
+                descHolder.classList.add('dispNone')
+                
+            })
+        }
+        // function that displays the coordinates
+        window.addEventListener('mousemove', function (e) {
+            var img = document.getElementById('pupMapID'); 
+            var width = img.clientWidth;
+            var height = img.clientHeight;
+            var x = e.x - 25
+            var y = e.y - 70
+            document.getElementById('coorID').innerHTML = "Image H:" + height + " W:" + width + " Tracing coordinates: x:" + x + ", y:"  + y
+        })
+    </script>
+</body>
+</html>
