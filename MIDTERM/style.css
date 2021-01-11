@@ -1,0 +1,17 @@
+body {
+    background-image: url(./media/img-repeat.JPG);
+    background-repeat: repeat;
+}
+
+.content {
+    background-color: beige;
+    display: flex;
+}
+h1 {
+    font-size: 32px;
+    color: #5c2900;
+}
+.section {
+    width: 400px;
+    padding: 0 20px;
+}

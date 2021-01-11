@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>MIDTERM: Registration - Garcia</title>
+     <style>
+        /* siniksik ko na po yung css kasi masyado po mahaba, di naman po yun yung highlight sa gawa, pang-ayos lang po ng itsura */
+         * {margin: 0; padding: 0; box-sizing: 0;}
+         div {margin-bottom: 10px;}
+         h2 {padding: 5px 0;}
+         form {width: 30%; min-width: 300px; height: fit-content; margin: 20px; padding: 5px;}
+         .reginput, select {width: 97%; padding: 3px; margin: 3px 0;}
+         p {margin: 5px 3px;}
+         .checkbox { width: unset; margin: 10px 0;}
+         .radio {width: unset; margin: 10px 0; margin-left: 15px;}
+         .radio:first-child {margin-left: unset;}
+         button {padding: 8px;}
+     </style>
+ </head>
+ <body>
+     <form action="POST">
+        <h2>Sign Up</h2> 
+        <div>
+             <label for="">Full Name</label>
+             <input type="text" class="reginput" id="firstname" name="firstname" placeholder="First Name">
+             <input type="text" class="reginput" id="lastname" name="lastname" placeholder="Last Name">
+         </div>
+         <div>
+             <label for="">Email Address</label>
+             <input type="email" class="reginput" id="email" placeholder="Email Address" value="">
+             <input type="email" class="reginput" id="confirmEmail" placeholder="Confirm Email" value="" onkeyup="checkEmail()">
+             <p id="emailChecker"></p>
+         </div>
+         <div>
+            <label for="">Age</label>
+            <input type="number" class="reginput" id="age" placeholder="Age" min="0">
+        </div>
+        <div>
+            <label for="">Plan</label>
+            <select name="plan" id="plan">
+                <option value="" disabled selected hidden>- Select a plan -</option>
+                <option value="basic">Basic</option>
+                <option value="premium">Premium</option>
+                <option value="titanium">Titanium</option>
+            </select>
+        </div>
+        <div>
+            <input type="checkbox" id="mailingList" class="checkbox">
+            <label for="">I wish to be added to a mailing list</label>
+        </div>
+        <label for="">Choose a Shirt Size</label>
+        <div>
+            <input type="radio" class="radio" name="radio" id="Small" value="Small">
+            <label for="Small">Small</label>
+
+            <input type="radio" class="radio" name="radio" id="Medium" value="Medium">
+            <label for="Medium">Medium</label>
+
+            <input type="radio" class="radio" name="radio" id="Large" value="Large">
+            <label for="Large">Large</label>
+        </div>
+
+        <button type="button" id="submitButton" onclick="submitFunction()" disabled="true">Submit</button>
+     </form>
+
+     <script src="./registrationgarcia.js"></script>
+ </body>
+ </html>
