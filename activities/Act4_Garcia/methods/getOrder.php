@@ -13,7 +13,7 @@
         VALUES ('$customerNum', '$customerName', '$address', '$emailAddress', '$mobileNum');";
         mysqli_query($connect, $sql);
 
-        for($a = 0; $a < count($_POST["itemNum"]); $a++) {
+        for($a = 0; $a < count($_POST["productName"]); $a++) {
 
             $get = "SELECT * FROM items WHERE item_name = '" . $_POST["productName"][$a]. "';";
             $items_result =  mysqli_query($connect, $get);
@@ -22,9 +22,9 @@
 
             if ($items_checkResult > 0) {
                 while ($row = mysqli_fetch_assoc($items_result)) {
-                    // $insertToOrderDetails = "INSERT INTO `order_details` (`order_number`, `item_code`, `quantity`) VALUES ('$orderNum', '" .$row["prodCode"] ."', '".$_POST["quantity"][$a]."')";
+                    $insertToOrderDetails = "INSERT INTO `order_details` (`order_number`, `item_code`, `quantity`) VALUES ('$orderNum', '" .$row["item_code"]."', '".$_POST["quantity"][$a]."')";
                     $insertToOrders = "INSERT INTO `orders` (`customer_number`, `order_number`, `order_amount`) VALUES ('$customerNum', '2', '".$_POST["quantity"][$a] * $row["order_amount"]."')";
-                    // mysqli_query($connect, $insertToOrderDetails);
+                    mysqli_query($connect, $insertToOrderDetails);
                     mysqli_query($connect, $insertToOrders); 
                 }
             }
@@ -32,7 +32,6 @@
            
         }
     }
-
     header("Location: ../index.php?order=success");
 
 ?>

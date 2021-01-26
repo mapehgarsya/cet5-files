@@ -1,27 +1,28 @@
 <?php
-    include('./methods/connectDb.php');
+include('./methods/connectDb.php');
 
-    $qs_item = "SELECT * FROM items;";
-    $item_result = mysqli_query($connect, $qs_item);
-    $item_checkResult = mysqli_num_rows($item_result);
+$qs_item = "SELECT * FROM items;";
+$item_result = mysqli_query($connect, $qs_item);
+$item_checkResult = mysqli_num_rows($item_result);
 
-    $connect2 = new PDO("mysql:host=localhost;dbname=orderform_db", "root", "");
-    function fill_options($connect)
-    {
-        $output = '';
-        $query = "SELECT * FROM items";
-        $statement = $connect->prepare($query);
-        $statement->execute();
-        $result = $statement->fetchAll();
-        foreach ($result as $row) {
-            $output .= '<option value="' . $row["item_name"] . '">' . $row["item_name"] . '</option>';
-        }
-        return $output;
+$connect2 = new PDO("mysql:host=localhost;dbname=orderform_db", "root", "");
+function fill_options($connect)
+{
+    $output = '';
+    $query = "SELECT * FROM items";
+    $statement = $connect->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll();
+    foreach ($result as $row) {
+        $output .= '<option value="' . $row["item_name"] . '">' . $row["item_name"] . '</option>';
     }
+    return $output;
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,19 +30,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="./main.css">
 </head>
+
 <body>
     <div class="maindiv">
         <p class="maintitle">ORDER FORM</p>
-        <form action="./methods/getOrder.php" method="POST" >
+        <form action="./methods/getOrder.php" method="POST">
             <div class="cstform">
                 <p class="divtitle">Customer</p>
                 <p align="right">
                     <label for="">Order Date:</label>
-                    <input type="date" class="inputstyle1"  value=<?php echo date('Y-m-d'); ?> disabled>
+                    <input type="date" class="inputstyle1" value=<?php echo date('Y-m-d'); ?> disabled>
                 </p>
                 <p align="right">
                     <label for=""> Order Number:</label>
-                    <input type="value" class="inputstyle1" name="order_num" value="<?php echo 'MRKN'. '-' . 02 . '-' . date('ymd') . '-' . rand(1, 5); ?>" disabled>
+                    <input type="value" class="inputstyle1" name="order_num" value="<?php echo 'MRKN' . '-' . 02 . '-' . date('ymd') . '-' . rand(1, 5); ?>">
                 </p>
 
                 <div>
@@ -63,7 +65,7 @@
                     </div>
                 </div>
             </div>
-        
+
             <div class="orderform">
                 <p class="divtitle">Products to Order</p> <br>
                 <div class="tablediv">
@@ -82,9 +84,9 @@
                         <tbody id="tbody">
                             <tr>
                                 <td id="unit">Unit Sample</td>
-                                <td><input type="number" name="quantity" id="quantity" class="inputstyle1 inputlength4" min="0" value="0"></td>
+                                <td><input type="number" name="quantity[]" id="quantity" class="inputstyle1 inputlength4" min="0" value="0"></td>
                                 <td>
-                                    <select name="products" id="select-event" class="dropdownstyle">
+                                    <select name="productName[]" id="select-event" class="dropdownstyle">
                                         <option value="def">None</option>
                                         <?php
                                         if ($item_checkResult > 0) {
@@ -93,14 +95,20 @@
                                             }
                                         }
                                         ?>
-                                      </select>
+                                    </select>
                                 </td>
-                                <td id="prodCode"><p>000X</p></td>
-                                <td id="desc"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></td>
-                                <td id="price"><p>XXX.XX Php</p></td>
+                                <td id="prodCode[]">
+                                    <p>000X</p>
+                                </td>
+                                <td id="desc">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </td>
+                                <td id="price">
+                                    <p>XXX.XX Php</p>
+                                </td>
                                 <td><button class="btnstyle1 btncolor2">Remove</button></td>
                             </tr>
-                            
+
                         </tbody>
                     </table>
                     <button class="add" type="button">
@@ -114,15 +122,14 @@
             </div>
 
             <div class="btndiv">
-                <button type="submit" name="submit" class="btnstyle1 btncolor1" ><p>Submit</p></button>
+                <button type="submit" name="submit" class="btnstyle1 btncolor1">
+                    <p>Submit</p>
+                </button>
             </div>
 
         </form>
     </div>
     <script>
-
-        
-
         $(document).ready(function() {
 
             // add item func
@@ -132,7 +139,7 @@
                 html += '<td id="unit">-</td>';
                 html += '<td><input type="text" name="quantity[]" class="table-input" placeholder="Number of items" /></td>';
                 html += '<td><select id="select-event" class="table-select" name="productName[]"><option value="">Select an item</option><?php echo fill_options($connect2); ?></select></td>';
-                html += '<td id="prodCode">-</td>';
+                html += '<td id="prodCode[]">-</td>';
                 html += '<td id="desc">-</td>';
                 html += '<td id="price" class="r-align">&#8369; -</td>';
                 html += '<td><button type="button" name="remove" class="btn-canceled remove">Remove</button></td></tr>';
@@ -143,7 +150,7 @@
             $(document).on('click', '.remove', function() {
                 $(this).closest('tr').remove();
             });
-            
+
             //shows data from table
             $(document).on('click', '#select-event', function() {
                 let var1 = {};
@@ -168,4 +175,5 @@
         });
     </script>
 </body>
+
 </html>
