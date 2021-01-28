@@ -97,7 +97,7 @@ function fill_options($connect)
                                         ?>
                                     </select>
                                 </td>
-                                <td id="prodCode[]">
+                                <td id="prodCode">
                                     <p>-</p>
                                 </td>
                                 <td id="desc">
@@ -111,7 +111,7 @@ function fill_options($connect)
 
                         </tbody>
                     </table>
-                    
+
                 </div>
                 <p align="right" class="total">
                     <label for="">Total:</label>
@@ -138,7 +138,7 @@ function fill_options($connect)
                 html += '<td id="unit">-</td>';
                 html += '<td><input type="text" name="quantity[]" class="table-input" placeholder="Number of items" /></td>';
                 html += '<td><select id="select-event" class="table-select" name="productName[]"><option value="">Select an item</option><?php echo fill_options($connect2); ?></select></td>';
-                html += '<td id="prodCode[]">-</td>';
+                html += '<td id="prodCode">-</td>';
                 html += '<td id="desc">-</td>';
                 html += '<td id="price" class="r-align">Php -</td>';
                 html += '<td><button type="button" name="remove" class="btnstyle1 btncolor2 remove">Remove</button></td></tr>';
