@@ -10,6 +10,7 @@
 body {
     background-color: #e7e7e7;
     font-family: 'Roboto', sans-serif;
+    padding-bottom: 50px;
 }
 
 ::-webkit-scrollbar{
@@ -80,7 +81,6 @@ body {
 }
 
 .btnstyle1 {
-    margin-right: 10px;
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
@@ -90,10 +90,49 @@ body {
     background-color: #3c8f3c;
     color: white;
 }
-
 .btncolor2 {
     background-color: #be322d;
+    color: white
+}
+
+.btnstyle2 {
+    background-color: #3d44aa;
     color: white;
+
+    display: flex;
+    text-decoration: none;
+    align-content: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 1000px;
+    min-width: 360px;
+    margin: auto;
+}
+
+.btnstyle3 {
+    background-color: #be322d;
+    color: white;
+
+    display: flex;
+    text-decoration: none;
+    align-content: center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+}
+#btnstyle4 {
+    background-color: #28ac00;
+    color: white;
+    width: 200px;
+    margin: 20px 20px 10px 0;
+
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
 }
 
 
@@ -153,7 +192,7 @@ body {
 /* TABLE */
 .tablediv {
     width: 100%;
-    overflow: scroll;
+    overflow: auto;
 }
 .tablestyle {
     border: 1px solid #061926;
@@ -162,25 +201,48 @@ body {
     text-align: left;
     border-collapse: collapse;
     white-space: nowrap;
-  }
+}
 .tablestyle td, .tablestyle th {
     border: 1px solid #AAAAAA;
     padding: 5px;
     text-align: center;
-  }
+}
 .tablestyle tbody td {
     font-size: 13px;
-  }
+}
 .tablestyle thead {
     background: #131136;
-  }
+}
 .tablestyle thead th {
     font-size: 20px;
     font-weight: 500;
     color: #FFFFFF;
-  }
+}
 
-
-  .dispNone {
+.dispNone {
       display: none;
-  }
+}
+
+.admindiv {
+    display: table;
+
+    width: 95%;
+    min-width: 360px;
+    height: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+
+    border:#ffffff solid 1px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 12px #5e5e5e;
+    background-color: white;
+}
+.admintitle {
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    
+    color: #2f2d44 ;
+}

@@ -43,7 +43,7 @@ function fill_options($connect)
                 </p>
                 <p align="right">
                     <label for=""> Order Number:</label>
-                    <input type="value" class="inputstyle1" name="order_num" value="<?php echo 'MRKN' . '-' . 02 . '-' . date('ymd') . '-' . rand(1, 5); ?>">
+                    <input type="value" class="inputstyle1" name="order_num" value="<?php echo 'MRKN' . '-' . 02 . '-' . date('ymd') . '-' . rand(0001, 9999); ?>">
                 </p>
 
                 <div>
@@ -98,22 +98,20 @@ function fill_options($connect)
                                     </select>
                                 </td>
                                 <td id="prodCode[]">
-                                    <p>000X</p>
+                                    <p>-</p>
                                 </td>
                                 <td id="desc">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p>-</p>
                                 </td>
                                 <td id="price">
-                                    <p>XXX.XX Php</p>
+                                    <p>Php -</p>
                                 </td>
-                                <td><button class="btnstyle1 btncolor2">Remove</button></td>
+                                <td><button class="add btnstyle1 btncolor1" type="button">Add Item</button></td>
                             </tr>
 
                         </tbody>
                     </table>
-                    <button class="add" type="button">
-                        Add Item
-                    </button>
+                    
                 </div>
                 <p align="right" class="total">
                     <label for="">Total:</label>
@@ -129,6 +127,7 @@ function fill_options($connect)
 
         </form>
     </div>
+    <a href="./admin.php" class="btnstyle1 btnstyle2">Go To Admin Page</a>
     <script>
         $(document).ready(function() {
 
@@ -141,8 +140,8 @@ function fill_options($connect)
                 html += '<td><select id="select-event" class="table-select" name="productName[]"><option value="">Select an item</option><?php echo fill_options($connect2); ?></select></td>';
                 html += '<td id="prodCode[]">-</td>';
                 html += '<td id="desc">-</td>';
-                html += '<td id="price" class="r-align">&#8369; -</td>';
-                html += '<td><button type="button" name="remove" class="btn-canceled remove">Remove</button></td></tr>';
+                html += '<td id="price" class="r-align">Php -</td>';
+                html += '<td><button type="button" name="remove" class="btnstyle1 btncolor2 remove">Remove</button></td></tr>';
                 $('#tbody').append(html);
             });
 

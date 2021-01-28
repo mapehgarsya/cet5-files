@@ -29,7 +29,8 @@
 </head>
 <body>
     <!-- CUSTOMER TABLE -->
-    <div>
+    <div class="admindiv">
+        <p class="admintitle">Customer Data</p>
         <?php
             if ($_GET['delcustomer'] === 'success') {
                 echo "<div id='delsuc' class=''>
@@ -62,7 +63,7 @@
                         echo "<td>" . $row['home_address'] . "</td>";
                         echo "<td>" . $row['email_address'] . "</td>";
                         echo "<td>" . $row['mobile_number'] . "</td>";
-                        echo "<td>" . '<a href="./methods/delCustomer.php?id=' . $row['id'] . '" class="">Delete</a>' . "</td>";
+                        echo "<td>" . '<a href="./methods/delCustomer.php?id=' . $row['id'] . '" class="btnstyle3">Delete</a>' . "</td>";
                         echo "</tr>";
                     }
                 }
@@ -71,7 +72,8 @@
         </table>
     </div>
     <!-- ITEMS TABLE -->
-    <div>
+    <div class="admindiv">
+        <p class="admintitle">Items Data</p>
         <?php
             if ($_GET['delitem'] === 'success') {
                 echo "<div id='delsuc' class=''>
@@ -117,7 +119,7 @@
             </tbody>
         </table>
         <!-- add item form -->
-        <form method="POST" action="./methods/addItem.php">
+        <form method="POST" action="./methods/addItem.php" class="dispNone">
             <div class="inputset">
                 <label for="" class="labelstyle1">Item Code</label>
                 <input type="text" class="inputstyle1 inputlength1" name="item_code" placeholder="" required>
@@ -146,7 +148,8 @@
         </form>
     </div>
     <!-- ORDERS TABLE -->
-    <div>
+    <div class="admindiv">
+        <p class="admintitle">Orders Data</p>
         <?php
             if ($_GET['delorder'] === 'success') {
                 echo "<div id='delsuc' class=''>
@@ -186,7 +189,8 @@
         </table>
     </div>
     <!-- ORDER DETAILS TABLE -->
-    <div>
+    <div class="admindiv">
+        <p class="admintitle">Order Details</p>
         <?php
             if ($_GET['delorderdetails'] === 'success') {
                 echo "<div id='delsuc' class=''>

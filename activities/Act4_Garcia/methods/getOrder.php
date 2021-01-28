@@ -3,7 +3,7 @@
 
     if(isset($_POST["submit"])) {
         $orderNum = $_POST['order_num'];
-        $customerNum = 'MRKN'. '-' . 02 . '-' . rand(1, 5);
+        $customerNum = 'MRKN'. '-' . 02 . '-' . rand(0001, 9999);
         $customerName = $_POST['customer_name'];
         $emailAddress = $_POST['email_address'];
         $address = $_POST['address'];
