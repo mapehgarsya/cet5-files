@@ -78,7 +78,7 @@ function fill_options($connect)
                                 <th>Product Code</th>
                                 <th>Description</th>
                                 <th>Unit Price</th>
-                                <th>Method</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody id="tbody">
@@ -120,7 +120,7 @@ function fill_options($connect)
             </div>
 
             <div class="btndiv">
-                <button type="submit" name="submit" class="btnstyle1 btncolor1">
+                <button type="submit" name="submit" class="btnstyle1 btncolor3">
                     <p>Submit</p>
                 </button>
             </div>
@@ -136,8 +136,8 @@ function fill_options($connect)
                 var html = '';
                 html += '<tr>';
                 html += '<td id="unit">-</td>';
-                html += '<td><input type="text" name="quantity[]" class="table-input" placeholder="Number of items" /></td>';
-                html += '<td><select id="select-event" class="table-select" name="productName[]"><option value="">Select an item</option><?php echo fill_options($connect2); ?></select></td>';
+                html += '<td><input type="text" name="quantity[]" class="table-input inputstyle1 inputlength4" min="0" value="0" /></td>';
+                html += '<td><select id="select-event" class="table-select dropdownstyle" name="productName[]"><option value="">Select an item</option><?php echo fill_options($connect2); ?></select></td>';
                 html += '<td id="prodCode">-</td>';
                 html += '<td id="desc">-</td>';
                 html += '<td id="price" class="r-align">Php -</td>';

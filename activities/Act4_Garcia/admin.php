@@ -42,34 +42,36 @@
             }
             
         ?>
-        <table class="tablestyle">
-            <thead>
-                <tr>
-                    <th>Customer number</th>
-                    <th>Customer name</th>
-                    <th>Home address</th>
-                    <th>Email</th>
-                    <th>Mobile Number</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                if ($customer_checkResult > 0) {
-                    while ($row = mysqli_fetch_assoc($customer_result)) {
-                        echo "<tr>";
-                        echo "<td>" . $row['customer_number'] . "</td>";
-                        echo "<td>" . $row['name'] . "</td>";
-                        echo "<td>" . $row['home_address'] . "</td>";
-                        echo "<td>" . $row['email_address'] . "</td>";
-                        echo "<td>" . $row['mobile_number'] . "</td>";
-                        echo "<td>" . '<a href="./methods/delCustomer.php?id=' . $row['id'] . '" class="btnstyle3">Delete</a>' . "</td>";
-                        echo "</tr>";
+        <div class="tablediv">
+            <table class="tablestyle">
+                <thead>
+                    <tr>
+                        <th>Customer number</th>
+                        <th>Customer name</th>
+                        <th>Home address</th>
+                        <th>Email</th>
+                        <th>Mobile Number</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if ($customer_checkResult > 0) {
+                        while ($row = mysqli_fetch_assoc($customer_result)) {
+                            echo "<tr>";
+                            echo "<td>" . $row['customer_number'] . "</td>";
+                            echo "<td>" . $row['name'] . "</td>";
+                            echo "<td>" . $row['home_address'] . "</td>";
+                            echo "<td>" . $row['email_address'] . "</td>";
+                            echo "<td>" . $row['mobile_number'] . "</td>";
+                            echo "<td>" . '<a href="./methods/delCustomer.php?id=' . $row['id'] . '" class="btnstyle3">Delete</a>' . "</td>";
+                            echo "</tr>";
+                        }
                     }
-                }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
     <!-- ITEMS TABLE -->
     <div class="admindiv">
@@ -85,41 +87,43 @@
             }
             
         ?>
-        <table class="tablestyle">
-            <thead>
-                <tr>
-                    <th>Item Code</th>
-                    <th>Item Name</th>
-                    <th>Unit</th>
-                    <th>Inventory Quantity</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <button>
-                    Add an item
-                </button>
-                <?php
-                if ($items_checkResult > 0) {
-                    while ($row = mysqli_fetch_assoc($items_result)) {
-                        echo "<tr>";
-                        echo "<td>" . $row['item_code'] . "</td>";
-                        echo "<td>" . $row['item_name'] . "</td>";
-                        echo "<td>" . $row['unit'] . "</td>";
-                        echo "<td>" . $row['inventory_qty'] . "</td>";
-                        echo "<td>" . $row['item_description'] . "</td>";
-                        echo "<td>" . $row['price'] . "</td>";
-                        echo "<td>" . '<a href="./methods/delItem.php?id=' . $row['id'] . '" class="">Delete</a>' . "</td>";
-                        echo "</tr>";
+        <div class="tablediv">
+            <table class="tablestyle">
+                <thead>
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Item Name</th>
+                        <th>Unit</th>
+                        <th>Inventory Quantity</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <button class="btnstyle1 btncolor3 mb" onclick="dispAdd()">
+                        Add an item
+                    </button>
+                    <?php
+                    if ($items_checkResult > 0) {
+                        while ($row = mysqli_fetch_assoc($items_result)) {
+                            echo "<tr>";
+                            echo "<td>" . $row['item_code'] . "</td>";
+                            echo "<td>" . $row['item_name'] . "</td>";
+                            echo "<td>" . $row['unit'] . "</td>";
+                            echo "<td>" . $row['inventory_qty'] . "</td>";
+                            echo "<td>" . $row['item_description'] . "</td>";
+                            echo "<td>" . $row['price'] . "</td>";
+                            echo "<td>" . '<a href="./methods/delItem.php?id=' . $row['id'] . '" class="btnstyle3">Delete</a>' . "</td>";
+                            echo "</tr>";
+                        }
                     }
-                }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>
         <!-- add item form -->
-        <form method="POST" action="./methods/addItem.php" class="dispNone">
+        <form method="POST" action="./methods/addItem.php" class="dispNone" id="addItemForm">
             <div class="inputset">
                 <label for="" class="labelstyle1">Item Code</label>
                 <input type="text" class="inputstyle1 inputlength1" name="item_code" placeholder="" required>
@@ -144,7 +148,7 @@
                 <label for="" class="labelstyle1">Price</label>
                 <input type="text" class="inputstyle1 inputlength1" name="price" placeholder="" required>
             </div>
-            <button type="submit" >Add</button>
+            <button type="submit" class="btnstyle1 btncolor1">Add</button>
         </form>
     </div>
     <!-- ORDERS TABLE -->
@@ -161,32 +165,34 @@
             }
             
         ?>
-        <table class="tablestyle">
-            <thead>
-                <tr>
-                    <th>Order Number</th>
-                    <th>Customer Number</th>
-                    <th>Order Date</th>
-                    <th>Order Amount</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                if ($orders_checkResult > 0) {
-                    while ($row = mysqli_fetch_assoc($orders_result)) {
-                        echo "<tr>";
-                        echo "<td>" . $row['order_number'] . "</td>";
-                        echo "<td>" . $row['customer_number'] . "</td>";
-                        echo "<td>" . $row['order_date'] . "</td>";
-                        echo "<td>" . $row['order_amount'] . "</td>";
-                        echo "<td>" . '<a href="./methods/delOrder.php?id=' . $row['id'] . '" class="">Delete</a>' . "</td>";
-                        echo "</tr>";
+        <div class="tablediv">
+            <table class="tablestyle">
+                <thead>
+                    <tr>
+                        <th>Order Number</th>
+                        <th>Customer Number</th>
+                        <th>Order Date</th>
+                        <th>Order Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if ($orders_checkResult > 0) {
+                        while ($row = mysqli_fetch_assoc($orders_result)) {
+                            echo "<tr>";
+                            echo "<td>" . $row['order_number'] . "</td>";
+                            echo "<td>" . $row['customer_number'] . "</td>";
+                            echo "<td>" . $row['order_date'] . "</td>";
+                            echo "<td>" . $row['order_amount'] . "</td>";
+                            echo "<td>" . '<a href="./methods/delOrder.php?id=' . $row['id'] . '" class="btnstyle3">Delete</a>' . "</td>";
+                            echo "</tr>";
+                        }
                     }
-                }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
     <!-- ORDER DETAILS TABLE -->
     <div class="admindiv">
@@ -202,38 +208,47 @@
             }
             
         ?>
-        <table class="tablestyle">
-            <thead>
-                <tr>
-                    <th>Order Number</th>
-                    <th>Item Code</th>
-                    <th>Quantity</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                if ($orderDetails_checkResult > 0) {
-                    while ($row = mysqli_fetch_assoc($orderDetails_result)) {
-                        echo "<tr>";
-                        echo "<td>" . $row['order_number'] . "</td>";
-                        echo "<td>" . $row['item_code'] . "</td>";
-                        echo "<td>" . $row['quantity'] . "</td>";
-                        echo "<td>" . '<a href="./methods/delOrderDetails.php?id=' . $row['id'] . '" class="">Delete</a>' . "</td>";
-                        echo "</tr>";
+        <div class="tablediv">
+            <table class="tablestyle">
+                <thead>
+                    <tr>
+                        <th>Order Number</th>
+                        <th>Item Code</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if ($orderDetails_checkResult > 0) {
+                        while ($row = mysqli_fetch_assoc($orderDetails_result)) {
+                            echo "<tr>";
+                            echo "<td>" . $row['order_number'] . "</td>";
+                            echo "<td>" . $row['item_code'] . "</td>";
+                            echo "<td>" . $row['quantity'] . "</td>";
+                            echo "<td>" . '<a href="./methods/delOrderDetails.php?id=' . $row['id'] . '" class="btnstyle3">Delete</a>' . "</td>";
+                            echo "</tr>";
+                        }
                     }
-                }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
+    <a href="./index.php" class="btnstyle1 btnstyle2">Go To Order Form</a>
     <script>
         // close delete success notif
         function closeDelSuccess() {
             let closeButton = document.getElementById('delsuc')
 
-            closeButton .classList.add('dispNone')
+            closeButton.classList.add('dispNone')
+        }
 
+        function dispAdd() {
+            let addItem = document.getElementById('addItemForm')
+
+            addItem.classList.remove('dispNone')
+            addItem.classList.add('additemDiv')
         }
     </script>
 </body>

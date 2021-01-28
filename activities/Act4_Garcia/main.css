@@ -87,7 +87,7 @@ body {
 }
 
 .btncolor1 {
-    background-color: #3c8f3c;
+    background-color: #3d44aa;
     color: white;
 }
 .btncolor2 {
@@ -95,8 +95,12 @@ body {
     color: white
 }
 
+.btncolor3 {
+    background-color: #34a543;
+    color: white;
+}
 .btnstyle2 {
-    background-color: #3d44aa;
+    background-color: #48484b;
     color: white;
 
     display: flex;
@@ -222,11 +226,19 @@ body {
 .dispNone {
       display: none;
 }
+.additemDiv {
+    display: unset;
+    margin-top: 20px;
+    border: #535353 solid 1px;
+}
+.mb {
+    margin-bottom: 10px;
+}
 
 .admindiv {
-    display: table;
-
-    width: 95%;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
     min-width: 360px;
     height: fit-content;
     margin: 0 auto;
